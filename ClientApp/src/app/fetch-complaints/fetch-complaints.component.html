@@ -1,0 +1,28 @@
+<h1 id="tableLabel">Complaints</h1>
+
+<p *ngIf="!complaints"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="complaints">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Message</th>
+      <th>is Critical?</th>
+      <th>submitted on</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Topic</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let complaint of complaints">
+      <td>{{ complaint.complaintTitle }}</td>
+      <td>{{ complaint.complaintMessage }}</td>
+      <td>{{ complaint.isCriticalString }}</td>
+      <td>{{ complaint.submittedOn }}</td>
+      <td>{{ complaint.userEmail }}</td>
+      <td>{{ complaint.statusString }}</td>
+      <td>{{ complaint.topicString }}</td>
+    </tr>
+  </tbody>
+</table>
